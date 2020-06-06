@@ -1,1 +1,5 @@
-/* http://quotes.stormconsultancy.co.uk/quotes.json 200!
+[[redirects]]
+from = "/quots.stormconsultancy.co.uk/*"
+to = "http://quotes.stormconsultancy.co.uk/:splat"
+status = 301
+force = false
