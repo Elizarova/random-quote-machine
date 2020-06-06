@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Quote from './components/quote/Quote';
+import Footer from './components/footer/Footer';
+import axios from 'axios';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [loading, setLoading] = useState(false);
+  const [quote, setQuote] = useState({});
+
+  // get Quote
+  const getRandomQuote = async () => {
+    setLoading(true);
+
+    const res = await axios.get(
+      'http://quotes.stormconsultancy.co.uk/random.json'
+    );
+
+    setQuote(res.data);
+    setLoading(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Quote getRandomQuote={getRandomQuote} loading={loading} quote={quote} />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
