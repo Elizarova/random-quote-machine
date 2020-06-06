@@ -2,9 +2,7 @@
 
 freeCodeCamp's Front End Libraries Projects
 
----
-
-Programming Quotes API http://quotes.stormconsultancy.co.uk/api
+Using Quote Garden A REST API for quotes https://github.com/pprathameshmore/QuoteGarden
 
 **Objective**: Build a CodePen.io app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/qRZeGZ.
 

@@ -2,13 +2,17 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Spinner from '../spinner/Spinner';
 
-const Quote = ({ quote: { quote, author }, loading, getRandomQuote }) => {
+const Quote = ({
+  quote: { quoteText, quoteAuthor },
+  loading,
+  getRandomQuote,
+}) => {
   useEffect(() => {
     getRandomQuote();
     // eslint-disable-next-line
   }, []);
 
-  const tweet = `"${quote}" / ${author} /`;
+  const tweet = `"${quoteText}" / ${quoteAuthor} /`;
 
   if (loading) {
     return <Spinner />;
@@ -16,9 +20,9 @@ const Quote = ({ quote: { quote, author }, loading, getRandomQuote }) => {
     return (
       <div className="quote-box" id="quote-box">
         <div className="quote-text">
-          <blockquote id="text">"{quote}"</blockquote>
+          <blockquote id="text">"{quoteText}"</blockquote>
           <div>
-            <cite id="author">- {author}</cite>
+            <cite id="author">- {quoteAuthor}</cite>
           </div>
         </div>
         <div className="quote-footer">

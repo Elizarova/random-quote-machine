@@ -13,10 +13,10 @@ const App = () => {
     setLoading(true);
 
     const res = await axios.get(
-      'http://quotes.stormconsultancy.co.uk/random.json'
+      'https://quote-garden.herokuapp.com/api/v2/quotes/random'
     );
 
-    setQuote(res.data);
+    setQuote(res.data.quote);
     setLoading(false);
   };
 
