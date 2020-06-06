@@ -1,5 +1,1 @@
-[[redirects]]
-from = "/quots.stormconsultancy.co.uk/*"
-to = "http://quotes.stormconsultancy.co.uk/:splat"
-status = 301
-force = false
+/quotes.stormconsultancy.co.uk/* http://quotes.stormconsultancy.co.uk/quotes.json 200!
